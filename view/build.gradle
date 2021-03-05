@@ -1,0 +1,131 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-parcelize'
+    id 'kotlin-kapt'
+}
+
+android {
+    compileSdkVersion project.compileSdkVersion
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        applicationId "ru.alexmenkov_photo.demoratingapp"
+        minSdkVersion project.minSdkVersion
+        targetSdkVersion project.targetSdkVersion
+        versionCode project.versionCode
+        versionName project.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
+    }
+    sourceSets {
+        main {
+            res.srcDirs =
+                    [
+                            'src/main/res/layouts/profile',
+                            'src/main/res/layouts/home',
+                            'src/main/res/layouts',
+                            'src/main/res/img',
+                            'src/main/res/ico',
+                            'src/main/res'
+                    ]
+        }
+    }
+}
+
+dependencies {
+    // KTX
+    implementation "androidx.core:core-ktx:$coreVersion"
+    implementation 'androidx.fragment:fragment-ktx:1.3.0'
+
+    // UI
+    implementation "androidx.appcompat:appcompat:$supportLibVersion"
+    implementation "com.google.android.material:material:$materialVersion"
+    implementation "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion"
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:$swipeRefreshLayoutVersion"
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation "com.google.android:flexbox:$googleFlexboxVersion"
+
+    // Navigation
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleVersion"
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.3'
+    implementation "androidx.navigation:navigation-ui-ktx:$navigationVersion"
+
+    implementation "com.google.dagger:dagger:$daggerVersion"
+    kapt "com.google.dagger:dagger-compiler:$daggerVersion"
+
+    // Firebase
+    implementation "com.google.firebase:firebase-messaging:$fbMessagingVersion"
+    implementation "com.google.firebase:firebase-messaging-ktx:$fbMessagingVersion"
+    implementation "com.google.firebase:firebase-messaging-directboot:$fbMessagingVersion"
+    implementation "com.google.firebase:firebase-analytics-ktx:$fbAnalyticsVersion"
+    implementation 'com.google.firebase:firebase-analytics'
+
+    // MapKit.
+    // implementation 'com.yandex.android:mapkit:3.5.0'
+
+    // Coroutines
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion"
+
+    // Work (Java only)
+    implementation "androidx.work:work-runtime:$workManagerVersion"
+    implementation "androidx.work:work-runtime-ktx:$workManagerVersion"
+
+    // Room
+    implementation "androidx.room:room-runtime:$roomVersion"
+    implementation "androidx.room:room-ktx:$roomVersion"
+    kapt "androidx.room:room-compiler:$roomVersion"
+
+    // Retrofit
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttpLoggingInterceptorVersion"
+
+    // Paging
+    implementation "androidx.paging:paging-runtime-ktx:$pagingVersion"
+
+    // Picasso
+    implementation "com.squareup.picasso:picasso:$picassoVersion"
+
+    // Placeholders
+    implementation "me.samlss:broccoli:$broccoliVersion"
+
+    // Input-mask
+    implementation 'ru.egslava:MaskedEditText:1.0.5'
+
+    // Blurry
+    implementation 'jp.wasabeef:blurry:4.0.0'
+    implementation 'com.eightbitlab:blurview:1.6.5'
+
+    // DateTime joda-time
+    implementation "joda-time:joda-time:$jodaTimeVersion"
+
+    // Keyboard-event
+    implementation 'net.yslibrary.keyboardvisibilityevent:keyboardvisibilityevent:1.0.1'
+
+    // Tests
+    testImplementation "junit:junit:$junitVersion"
+    testImplementation "com.google.truth:truth:$truthVersion"
+    androidTestImplementation "com.google.truth:truth:$truthVersion"
+    androidTestImplementation "androidx.test.ext:junit:$runnerVersion"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espressoVersion"
+}

@@ -1,0 +1,2 @@
+include ':view'
+rootProject.name = "DemoRatingApp"

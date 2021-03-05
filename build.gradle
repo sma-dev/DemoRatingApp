@@ -1,0 +1,64 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    ext.kotlin_version = "1.4.31"
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:4.1.2"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+ext {
+    compileSdkVersion = 30
+    minSdkVersion = 27
+    targetSdkVersion = 30
+    versionCode = 1
+    versionName = '01-alpha01'
+}
+//version constants
+ext {
+    supportLibVersion = '1.2.0'
+    coreVersion = '1.3.2'
+    constraintLayoutVersion = '2.0.4'
+    googleFlexboxVersion = '2.0.1'
+    swipeRefreshLayoutVersion = '1.1.0'
+    materialVersion = '1.3.0'
+    lifecycleVersion = '2.3.0'
+    roomVersion = '2.3.0-beta02'
+    pagingVersion = '3.0.0-beta01'
+    workManagerVersion = '2.5.0'
+    daggerVersion = '2.33'
+    retrofitVersion = '2.9.0'
+    okhttpLoggingInterceptorVersion = '5.0.0-alpha.2'
+    coroutinesVersion = '1.3.7'
+    navigationVersion = '2.3.3'
+    fbMessagingVersion = '21.0.1'
+    fbAnalyticsVersion = '18.0.2'
+    picassoVersion = '2.71828'
+    jodaTimeVersion = '2.10.8'
+    broccoliVersion = '1.0.0'
+
+    runnerVersion = '1.1.2'
+    rulesVersion = '1.0.1'
+    truthVersion = '1.1.2'
+    junitVersion = '4.13.2'
+    espressoVersion = '3.4.0-alpha04'
+
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

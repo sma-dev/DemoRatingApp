@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">DemoRatingApp</string>
+
+    <string name="title_home">Home</string>
+    <string name="title_profile">Profile</string>
+    <string name="action_load_retry">Retry</string>
+    <string name="action_back">Back</string>
+    <string name="label_error">Error</string>
+</resources>
